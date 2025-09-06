@@ -10,7 +10,7 @@
 
     <groupId>io.github.rkmsh</groupId>
     <artifactId>aws-lite-spring-boot-starter</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1.2</version>
     <packaging>jar</packaging>
 
     <name>AWS Lite Spring Boot Starter</name>
@@ -39,7 +39,7 @@
         <connection>scm:git:https://github.com/rkmsh/aws-sdk-lite.git</connection>
         <developerConnection>scm:git:https://github.com/rkmsh/aws-sdk-lite.git</developerConnection>
         <url>https://github.com/rkmsh/aws-sdk-lite</url>
-      <tag>aws-lite-spring-boot-starter-1.1.0</tag>
+      <tag>aws-lite-spring-boot-starter-1.1.2</tag>
   </scm>
 
     <repositories>
