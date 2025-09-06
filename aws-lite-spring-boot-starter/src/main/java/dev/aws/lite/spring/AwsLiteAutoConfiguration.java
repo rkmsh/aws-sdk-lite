@@ -6,6 +6,7 @@ import dev.aws.lite.core.sigv4.SigV4Signer;
 import dev.aws.lite.s3.S3Client;
 import dev.aws.lite.sqs.SqsClient;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
@@ -16,8 +17,10 @@ public class AwsLiteAutoConfiguration {
     @Bean
     public CredentialsProvider credentialsProvider(AwsLiteProperties p){
         if(p.getAccessKeyId()!=null && p.getSecretAccessKey()!=null){
+            System.out.println("Access Key Id: "+p.getAccessKeyId());
             return new StaticCredentialsProvider(p.getAccessKeyId(), p.getSecretAccessKey(), p.getSessionToken());
         }
+        System.out.println("ENVIRONMENT VARIABLES");
         return new EnvCredentialsProvider();
     }
 

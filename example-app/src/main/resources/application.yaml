@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo-app
+#aws:
+#  lite:
+#    access-key-id: meta
+#    region: us-east-1
+#    secret-access-key: meta
+#    session-token: meta
