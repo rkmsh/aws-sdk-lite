@@ -37,7 +37,7 @@
     <!-- Source Control -->
     <scm>
         <connection>scm:git:https://github.com/rkmsh/aws-sdk-lite.git</connection>
-        <developerConnection>scm:git:ssh://github.com:rkmsh/aws-sdk-lite.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@github.com/rkmsh/aws-sdk-lite.git</developerConnection>
         <url>https://github.com/rkmsh/aws-sdk-lite</url>
       <tag>aws-lite-spring-boot-starter-1.1.0</tag>
   </scm>
