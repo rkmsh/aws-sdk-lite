@@ -33,9 +33,6 @@
     </licenses>
 
     <modules>
-        <module>aws-lite-core</module>
-        <module>aws-lite-s3</module>
-        <module>aws-lite-sqs</module>
         <module>aws-lite-spring-boot-starter</module>
         <module>example-app</module>
     </modules>

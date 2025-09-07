@@ -44,7 +44,7 @@ public class SqsClient {
         headers.put("content-type", "application/x-www-form-urlencoded; charset=utf-8");
         headers.put("x-amz-content-sha256", sha256Hex(payload));
 
-        var signed = signer.sign(new AwsHttpRequest(AwsHttpRequest.Method.POST, uri, headers, payload), "sqs", region, credentials.resolveCredentials());
+        var signed = signer.sign(new AwsHttpRequest(AwsHttpRequest.Method.POST, uri, headers, payload), "dev/aws/lite/sqs", region, credentials.resolveCredentials());
         HttpResponse<byte[]> resp = http.execute(new AwsHttpRequest(AwsHttpRequest.Method.POST, uri, signed, payload));
         int sc = resp.statusCode();
         if(sc>=200 && sc<300) return new String(resp.body(), StandardCharsets.UTF_8);
@@ -59,5 +59,5 @@ public class SqsClient {
         for(byte x: out) sb.append(String.format("%02x", x));
         return sb.toString();
     }
-    private static String urlEncode(String s){ return java.net.URLEncoder.encode(s, java.nio.charset.StandardCharsets.UTF_8); }
+    private static String urlEncode(String s){ return java.net.URLEncoder.encode(s, StandardCharsets.UTF_8); }
 }

@@ -32,7 +32,7 @@ public class S3Client {
                 .body(data)
                 .build();
 
-        var signed = signer.sign(new AwsHttpRequest(req.method(), req.uri(), headers, data), "s3", region, credentials.resolveCredentials());
+        var signed = signer.sign(new AwsHttpRequest(req.method(), req.uri(), headers, data), "dev/aws/lite/s3", region, credentials.resolveCredentials());
         AwsHttpRequest signedReq = AwsHttpRequest.builder()
                 .method(req.method())
                 .uri(req.uri())
@@ -51,7 +51,7 @@ public class S3Client {
         headers.put("x-amz-content-sha256", sha256Hex(new byte[0]));
 
         AwsHttpRequest req = AwsHttpRequest.builder().method(AwsHttpRequest.Method.GET).uri(uri).build();
-        var signed = signer.sign(new AwsHttpRequest(req.method(), req.uri(), headers, new byte[0]), "s3", region, credentials.resolveCredentials());
+        var signed = signer.sign(new AwsHttpRequest(req.method(), req.uri(), headers, new byte[0]), "dev/aws/lite/s3", region, credentials.resolveCredentials());
         signed.putAll(headers);
 
         HttpResponse<byte[]> resp = http.execute(new AwsHttpRequest(req.method(), req.uri(), signed, new byte[0]));
